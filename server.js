@@ -393,10 +393,12 @@ app.post("/api/translate", async function(req, res) {
 // SUNUCU
 // ===============================
 
-app.listen(3000, function() {
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, "0.0.0.0", function() {
 
     console.log(
-        "Lingualearn sunucusu http://localhost:3000 adresinde çalışıyor."
+        `Lingualearn sunucusu ${PORT} portunda çalışıyor.`
     );
 
 });
