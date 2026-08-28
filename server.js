@@ -308,7 +308,7 @@ app.post("/api/translate", async function(req, res) {
 
         const response =
             await fetch(
-                "http://127.0.0.1:5000/translate",
+                "https://lingualearn-dfkz.onrender.com/translate",
                 {
                     method: "POST",
 
