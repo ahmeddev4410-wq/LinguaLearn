@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lingualearn-1-4vxq.onrender.com/sitemap.xml
