@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 
 const app = express();
 
@@ -388,7 +389,9 @@ app.post("/api/translate", async function(req, res) {
 
 });
 
-
+app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
 // ===============================
 // SUNUCU
 // ===============================
