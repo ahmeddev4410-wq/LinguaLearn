@@ -214,3 +214,9 @@ footer {
         font-size: 25px;
     }
 }
+.site-logo {
+    display: block;
+    width: 70px !important;
+    height: auto !important;
+    margin: 10px auto !important;
+}
