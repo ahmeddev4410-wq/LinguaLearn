@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lingualearn</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+    const textInput = document.getElementById("textInput");
+    const translateButton = document.querySelector(".translate-button");
+
+    if (textInput && translateButton) {
+
+        textInput.addEventListener("keydown", function(event) {
+
+            if (event.key === "Enter" && !event.shiftKey) {
+
+                event.preventDefault();
+
+                translateButton.click();
+
+            }
+
+        });
+
+    }
+
+});
+</script>
+
+</script>
+
+    <header>
+        <h1>🌍 Lingualearn</h1>
+        <p>128 Dilli Çeviri ve Kelime Öğrenme Uygulaması</p>
+    </header>
+
+    <main class="container">
+
+<button id="dailySpeakButton" class="speak-button">
+    🔊 Dinle
+</button>
+
+<button id="dailyFavoriteButton" class="favorite-button">
+    ❤️ Favoriye Ekle
+</button>
+
+        <section class="card daily-word">
+
+    <h2>🌟 Günün Kelimesi</h2>
+
+    <h1 id="dailyWord">beautiful</h1>
+
+    <p id="dailyMeaning">
+        Güzel, hoş veya estetik açıdan beğenilen.
+    </p>
+
+    <p id="dailyExample">
+        💬 She has a beautiful smile.
+    </p>
+
+    <span id="dailyLevel">
+        A1 - Temel seviye
+    </span>
+
+</section>
+
+<section class="card quiz-card">
+
+    <h2>🧠 Kelime Testi</h2>
+
+    <h3 id="quizQuestion">
+        Soru yükleniyor...
+    </h3>
+
+    <div id="quizOptions"></div>
+
+    <p id="quizResult"></p>
+
+    <p>
+        🏆 Puan: <strong id="quizScore">0</strong>
+    </p>
+
+    <button id="nextQuizButton">
+        🔄 Yeni Soru
+    </button>
+
+</section>
+
+</section>
+
+        <!-- Dil seçimi ve çeviri alanı -->
+        <section class="card">
+
+            <div class="language-row">
+
+                <div class="language-box">
+                    <label for="sourceLanguage">
+                        Kaynak Dil
+                    </label>
+
+                    <select id="sourceLanguage">
+                        <option>Türkçe</option>
+                        <option>İngilizce</option>
+                        <option>Almanca</option>
+                        <option>Fransızca</option>
+                        <option>Kürtçe</option>
+                    </select>
+                </div>
+
+                <div class="swap">
+                    ⇄
+                </div>
+
+                <div class="language-box">
+                    <label for="targetLanguage">
+                        Hedef Dil
+                    </label>
+
+                    <select id="targetLanguage">
+                        <option>İngilizce</option>
+                        <option>Türkçe</option>
+                        <option>Almanca</option>
+                        <option>Fransızca</option>
+                        <option>Kürtçe</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <br>
+
+            <label for="textInput">
+                Çevrilecek kelime veya cümle
+            </label>
+
+            <textarea
+                id="textInput"
+                placeholder="Örneğin: beautiful"></textarea>
+            
+
+            <button class="translate-button">
+                🌐 Çevir
+            </button>
+
+        </section>
+
+
+        <!-- Çeviri sonucu -->
+      <section class="card result">
+
+    <h3>🔤 Çeviri</h3>
+
+    <p id="translation">
+        Çeviri sonucu burada görünecek.
+    </p>
+
+    <button id="copyButton" class="copy-button">
+        📋 Kopyala
+    </button>
+
+    <button id="speakButton" class="speak-button">
+    🔊 Dinle
+</button>
+
+<button id="favoriteButton" class="favorite-button">
+    ⭐ Favorilere Ekle
+</button>
+
+</section>
+
+<section class="card">
+    <h3>🕘 Çeviri Geçmişi</h3>
+
+    <section class="card">
+    <h3>⭐ Favoriler</h3>
+
+    <div id="favorites">
+        Henüz favori eklenmedi.
+    </div>
+
+    <button id="clearFavoritesButton">
+        🗑️ Favorileri Temizle
+    </button>
+</section>
+
+    <div id="history">
+        Henüz çeviri yapılmadı.
+    </div>
+
+    <button id="clearHistoryButton">
+        🗑️ Geçmişi Temizle
+    </button>
+</section>
+
+
+        <!-- Kelime bilgileri -->
+        <section class="card">
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <h3>📖 Anlam</h3>
+
+                    <p id="meaning">
+                        Kelimenin anlamı burada gösterilecek.
+                    </p>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <h3>📊 Kullanım Seviyesi</h3>
+
+                    <p id="level">
+                        A1 - A2 - B1 - B2 - C1 - C2
+                    </p>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <h3>💬 Örnek Cümle</h3>
+
+                    <p id="example">
+                        Örnek cümle burada gösterilecek.
+                    </p>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <h3>🔄 Alternatif Kelimeler</h3>
+
+                    <p id="alternatives">
+                        Alternatif kelimeler burada gösterilecek.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        © 2026 Lingualearn
+    </footer>
+    
+<script src="script.js"></script>
+
+</body>
+
+</html>
